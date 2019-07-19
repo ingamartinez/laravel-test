@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -19,9 +19,7 @@ class UsersRolesTableSeeder extends Seeder
             $role = $i == 1 ? 1 : 2;
 
             $this->createUserRole($user, $role, $date);
-
         }
-
     }
 
     private function getUsersCount(){
@@ -35,9 +33,5 @@ class UsersRolesTableSeeder extends Seeder
             'created_at' => $date->now(),
             'updated_at' => $date->now()
         ]);
-    }
-
-    private function craftUserRole(){
-
     }
 }
